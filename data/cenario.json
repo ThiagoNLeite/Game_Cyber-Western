@@ -1,0 +1,358 @@
+[
+  {
+    "id": 1,
+    "nome": "Refúgio Poeira-Estelar",
+    "subtitulo": "O último saloon antes do fim do mundo",
+
+    "narrativa_entrada": "A poeira vermelha gruda nos seus dentes enquanto você empurra a porta rangente do saloon. Cabeças se viram. Mãos se aproximam dos coletes. Você é novo aqui — e no deserto de silício, rostos novos são problemas.",
+    "narrativa_saida": "Ao atravessar a ponte do velho minerador atrás de você o Refúgio já esqueceu que você existiu, à frente, a estrada quebrada desce para o Desfiladeiro dos Cabos Partidos.",
+
+    "inimigo_entrada": "arruaceiro_saloon",
+    "inimigos": ["rato_cibernetico", "coiote_mutante", "drone_patrulha"],
+
+    "exploracoes_minimas": 0,
+    "exploracoes_disponiveis": 3,
+    "narrativa_exploracao_desbloqueio": null,
+
+    "eventos_exploracao": [
+      {
+        "tipo": "terminal",
+        "dificuldade": 1,
+        "conta_minimo": false,
+        "narrativa_antes": "Atrás do balcão, meio escondido por uma cortina de couro queimado, um terminal antigo pisca fracamente. Parece que o barman usava pra registrar dívidas. Talvez ainda tenha algo útil lá dentro."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 1,
+        "conta_minimo": false,
+        "narrativa_antes": "Uma tábua do assoalho range diferente das outras sob seu peso. Você a levanta com o pé. Embaixo, um baú de metal enferrujado, pequeno mas fechado com cadeado. Alguém escondeu isso aqui deliberadamente."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você vasculha as mesas do saloon. Garrafas quebradas, fichas de jogo sem valor, um par de botas com furo na sola. Nada que valha o tempo gasto. O lugar foi saqueado muitas vezes antes de você chegar."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": false,
+        "narrativa_antes": "Você abre uma porta nos fundos do saloon procurando uma saída. O gatilho de um alarme de proximidade clica sob seus pés antes que você perceba."
+      }
+    ],
+
+    "guardiao_passagem": {
+      "enigma_indice": 0,
+      "narrativa_guardiao": "Na saída do Refúgio, uma ponte estreita sobre uma ravina de ferro retorcido. Sentado numa cadeira de balanço na entrada, um velho de chapéu gasto e espingarda no colo. Ele abre um olho quando você chega. \"Ninguém passa pela minha ponte de graça, moço. Resolve minha charada — ou paga quinze células de fusão. Simples assim.\"",
+      "custo_tipo": "celulas",
+      "custo_valor": 15,
+      "narrativa_custo": "O velho conta as células devagar, uma por uma, com dedos grossos. Depois sorri mostrando dois dentes. \"Prazer fazer negócio.\" Ele se levanta e abre o caminho com um gesto cansado de mão."
+    },
+
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": true,
+    "musica": "saloon_ambience"
+  },
+
+  {
+    "id": 2,
+    "nome": "Desfiladeiro dos Cabos Partidos",
+    "subtitulo": "Onde a eletricidade ainda corre solta",
+
+    "narrativa_entrada": "Fios de alta tensão balançam como cobras mortas entre as paredes do cânion. A qualquer momento um deles pode despertar. Você caminha devagar, cada passo medido. Aqui, a pressa mata — literalmente.",
+    "narrativa_saida": "Você chega ao outro lado do desfiladeiro com o couro chamuscado em dois lugares. A saída é um túnel escavado na rocha, baixo o suficiente pra te obrigar a se curvar. Do outro lado, o cheiro de enxofre anuncia as Minas de Lítio.",
+
+    "inimigo_entrada": "rato_cibernetico",
+    "inimigos": ["coiote_mutante", "drone_patrulha", "escorpiao_cobre"],
+
+    "exploracoes_minimas": 1,
+    "exploracoes_disponiveis": 4,
+    "narrativa_exploracao_desbloqueio": "Depois de examinar o terreno com cuidado, você identifica uma rota segura entre os fios. O caminho para o túnel de saída está visível agora — quando quiser avançar, é só seguir.",
+
+    "eventos_exploracao": [
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Você avança devagar, testando o chão antes de pisar, de olho nos fios acima. Leva tempo, mas você começa a entender o padrão — quais fios estão mortos, quais ainda carregam carga. O caminho vai se tornando mais claro."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 1,
+        "conta_minimo": false,
+        "narrativa_antes": "Preso entre duas pedras, meio coberto por detritos, uma bolsa de courier com o logo de uma empresa de logística que não existe mais. A bolsa está intacta, fechada com fecho magnético."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": false,
+        "narrativa_antes": "Você alcança o que parece ser um atalho entre as pedras. Mas um dos fios ali está tenso demais — e está conectado a uma placa de metal no chão."
+      },
+      {
+        "tipo": "terminal",
+        "dificuldade": 1,
+        "conta_minimo": false,
+        "narrativa_antes": "Embutido na parede do cânion, protegido por uma caixa de metal, um terminal de controle elétrico da rede antiga. Ainda funcionando, aparentemente. Talvez dê pra desligar alguns dos fios."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você explora um recanto do desfiladeiro. Ossos de animais, uma espingarda sem munição, rastros de alguém que passou por aqui faz tempo. Nada que ajude agora."
+      }
+    ],
+
+    "guardiao_passagem": null,
+
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": false,
+    "musica": "canyon_wind"
+  },
+
+  {
+    "id": 3,
+    "nome": "As Minas de Lítio",
+    "subtitulo": "Cavernas que devoram luz e saúde",
+
+    "narrativa_entrada": "O ar aqui queima por dentro. Cristais de lítio brilham nas paredes com uma luz doentia. Sem uma fonte de luz, você está andando cego — e algo está andando com você na escuridão.",
+    "narrativa_saida": "Você sobe o último lance de degraus escavados na rocha e respira. O ar do deserto parece limpo comparado com o veneno que você acabou de respirar por horas. Lá embaixo, as minas engolindo o som. À frente, no horizonte: uma silhueta comprida de ferro enferrujado. O Trem Bala Abandonado.",
+
+    "inimigo_entrada": "minerador_infectado",
+    "inimigos": ["sanguessuga_bateria", "cacador_recompensas"],
+
+    "exploracoes_minimas": 2,
+    "exploracoes_disponiveis": 5,
+    "narrativa_exploracao_desbloqueio": "Depois de vasculhar os túneis, você encontra o que procurava: o corredor principal que atravessa a mina e sobe para a saída. O caminho está aberto — quando quiser, é só subir.",
+
+    "eventos_exploracao": [
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Você encontra uma caixa de ferramentas abandonada. Entre as peças enferrujadas, um bastão de luz química — fraco, mas suficiente pra enxergar alguns metros à frente. Pelo menos agora você não está completamente cego."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Seguindo os trilhos antigos no chão, você decifra qual dos três túneis leva para cima. Os outros dois terminam em desmoronamento. Esse é o caminho."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 2,
+        "conta_minimo": false,
+        "narrativa_antes": "Um armário de metal da empresa mineradora, ainda preso à parede por parafusos, está trancado com um código numérico. O nome na placa: \"Supervisor Geral — Acesso Restrito\"."
+      },
+      {
+        "tipo": "terminal",
+        "dificuldade": 2,
+        "conta_minimo": false,
+        "narrativa_antes": "No centro de uma câmara maior, conectado a geradores que ainda funcionam a custo, um terminal de controle da mina. A tela mostra mapas dos túneis e registros de extração. Pode ter dados úteis — ou acesso a sistemas de segurança."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": false,
+        "narrativa_antes": "Você segue uma galeria lateral que parece levar a uma saída alternativa. O chão é instável — cristais de lítio fragilizaram a rocha. Um passo errado e o teto vem abaixo."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você explora um poço de extração desativado. No fundo há equipamentos caros abandonados — pesados demais pra carregar. Você anota mentalmente e segue em frente."
+      }
+    ],
+
+    "guardiao_passagem": {
+      "enigma_indice": 2,
+      "narrativa_guardiao": "Na saída da mina, onde a galeria se abre para as escadas que levam à superfície, uma figura aguarda. Não é sólida — pisca levemente, seus contornos tremem. Um holograma de uma criança, expressão vazia, bloqueando o corredor. Quando você chega perto, ela fala com uma voz de estática: \"Eu falo sem boca. Ouço sem ouvidos. Não tenho corpo, mas ganho vida com o vento. Me diga o que sou — ou pague o preço de passagem.\" Uma barra de progresso aparece ao lado dela mostrando 30% da sua vida atual.",
+      "custo_tipo": "vida",
+      "custo_valor": 30,
+      "narrativa_custo": "A figura estende uma mão translúcida. Você sente um frio súbito no peito — como se algo fosse retirado de dentro. A vida drena. A figura brilha mais forte por um instante e depois se dissolve, abrindo o caminho."
+    },
+
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": false,
+    "musica": "mines_drip"
+  },
+
+  {
+    "id": 4,
+    "nome": "O Trem Bala Abandonado",
+    "subtitulo": "Uma dungeon linear de aço enferrujado",
+
+    "narrativa_entrada": "O trem magnético nunca chegou ao destino. Agora apodrece no trilho, seus vagões habitados por sistemas de segurança que nunca receberam ordem de parar. Para chegar ao Oásis Metálico, você precisa atravessar o trem de ponta a ponta. São seis vagões. Cada um pode ter uma surpresa.",
+    "narrativa_saida": "O último vagão se abre para o deserto aberto. Você pula e aterra na areia quente, levantando uma nuvem de poeira vermelha. Ao longe, uma luz azulada pulsa no horizonte — o Oásis Metálico, construído ao redor de uma nave caída.",
+
+    "inimigo_entrada": "torreta_seguranca",
+    "inimigos": ["sanguessuga_bateria", "cacador_recompensas", "verme_areia_jovem"],
+
+    "exploracoes_minimas": 4,
+    "exploracoes_disponiveis": 6,
+    "narrativa_exploracao_desbloqueio": "Você empurra a porta do último vagão. Do outro lado: o deserto aberto, areia vermelha, e a saída do trem. Você atravessou. Quando quiser, é só pular.",
+
+    "eventos_exploracao": [
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Vagão 1 — Cargueiro. Caixas vazias, esteiras de transporte emperradas. Nada de valor, mas o vagão está limpo. Você marca a rota e avança para o próximo."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Vagão 2 — Passageiros. Bancos de couro rasgado, janelas quebradas, um ventilador girando lentamente sem fazer nada. Há marcas de luta nas paredes. Alguém tentou passar antes de você."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": true,
+        "narrativa_antes": "Vagão 3 — Segurança. Você empurra a porta e ouve um clique. Sensores de pressão no chão, conectados a algo no teto. O sistema ainda está ativo."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Vagão 4 — Restaurante. Mesas postas como se os passageiros fossem chegar a qualquer momento. A comida virou pó há décadas. Um rádio na bancada ainda recebe estática. Você ouve algo que pode ser uma voz, distante demais para entender."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 2,
+        "conta_minimo": false,
+        "narrativa_antes": "Vagão 5 — Carga especial. Caixas lacradas com símbolo de biohazard — mas uma delas é diferente: metal pesado, fechadura eletrônica, sem marcação de perigo. Alguém guardou algo valioso aqui."
+      },
+      {
+        "tipo": "terminal",
+        "dificuldade": 2,
+        "conta_minimo": false,
+        "narrativa_antes": "Na cabine de controle de um dos vagões, um terminal de bordo ainda funcionando em modo de emergência. Talvez dê pra desativar alguns dos sistemas de segurança que restam."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você explora um compartimento de manutenção entre os vagões. Ferramentas velhas, cabos enrolados, um manual técnico do trem em linguagem que você não entende. Nada útil para agora."
+      }
+    ],
+
+    "guardiao_passagem": null,
+
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": false,
+    "musica": "train_creak"
+  },
+
+  {
+    "id": 5,
+    "nome": "O Oásis Metálico",
+    "subtitulo": "Acampamento ao redor de uma nave caída",
+
+    "narrativa_entrada": "Uma nave de carga pré-Curto afundou na areia e virou o centro de um acampamento improvisado. Sobreviventes de todas as facções se reúnem aqui — alguns comerciantes, alguns fugitivos, alguns que prefere que você não faça perguntas. Os portões blindados da nave estão fechados. Dentro está o que você precisa para chegar à Torre. Você vai ter que trabalhar para abrir esse caminho.",
+    "narrativa_saida": "Os portões da nave cedem com um gemido hidráulico. Dentro, suprimentos e — mais importante — um mapa fragmentado mostrando a localização exata da Torre do Silício. Você guarda o mapa e sai pelo outro lado do acampamento. A Torre está a dois dias de caminhada. O Dróide Guardião nos portões de saída foi o último teste antes do deserto aberto.",
+
+    "inimigo_entrada": "holograma_defensivo",
+    "inimigos": ["sintetico_berserker", "centauro_mecanico"],
+
+    "exploracoes_minimas": 2,
+    "exploracoes_disponiveis": 4,
+    "narrativa_exploracao_desbloqueio": "Você encontrou o gerador auxiliar da nave e conseguiu redirecionar energia para os portões principais. O sistema de abertura está ativo agora. Quando quiser entrar, é só acionar o painel.",
+
+    "eventos_exploracao": [
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Você circula o perímetro do acampamento. Barracas improvisadas, fogueiras baixas, olhares desconfiados. Num canto, um mecânico bêbado te explica sem pedir que o gerador da nave tem uma entrada de serviço no lado nordeste do casco. Informação valiosa."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Você encontra a entrada de serviço e, depois de forçar dois painéis enferrujados, chega ao gerador auxiliar da nave. Com algum esforço, você redireciona energia suficiente para os portões principais. O painel de controle acende. Caminho aberto."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 3,
+        "conta_minimo": false,
+        "narrativa_antes": "No interior parcialmente acessível da nave, atrás de uma bulkhead que você consegue forçar, um container de carga lacrado com o logo de uma corporação militar extinta. Material pesado, fechadura de alta segurança."
+      },
+      {
+        "tipo": "terminal",
+        "dificuldade": 3,
+        "conta_minimo": false,
+        "narrativa_antes": "A sala de controle da nave ainda tem um terminal funcionando com energia de emergência. Os dados estão parcialmente corrompidos, mas há fragmentos de informação sobre a Torre do Silício — plantas, protocolos de segurança, nomes de sistemas."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": false,
+        "narrativa_antes": "Explorando uma ala menos frequentada do acampamento, você pisa numa grade de metal que cede. Embaixo, um sistema de alarme perimetral — provavelmente instalado por alguém que não queria visitas."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você conversa com alguns dos habitantes do acampamento. Histórias sobre a Torre — alguns dizem que é uma prisão, outros que é um laboratório, outros que é o coração de uma rede de IA ainda ativa. Ninguém foi lá e voltou para confirmar."
+      }
+    ],
+
+    "guardiao_passagem": {
+      "enigma_indice": 1,
+      "narrativa_guardiao": "Na saída do Oásis, um Dróide Guardião bloqueia o portão que leva ao deserto aberto. Modelo antigo, mas bem conservado — seus sistemas ainda funcionam perfeitamente. Ele analisa você por alguns segundos antes de falar: \"Protocolo de saída ativo. Para passar: resolva o paradoxo lógico, ou entregue um item de valor equivalente para o banco de dados de troca. Escolha.\"",
+      "custo_tipo": "item",
+      "custo_valor": 1,
+      "narrativa_custo": "O Dróide escaneia o item que você entrega, registra no banco de dados interno, e dá um passo para o lado. \"Transação registrada. Passagem autorizada.\" Ele volta à posição de guarda como se você nunca tivesse existido."
+    },
+
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": false,
+    "musica": "oasis_hum"
+  },
+
+  {
+    "id": 6,
+    "nome": "A Torre do Silício",
+    "subtitulo": "O labirinto final — onde o Código Fonte dorme",
+
+    "narrativa_entrada": "Neon piscando sobre paredes brancas manchadas de óleo. Câmeras te seguem em cada corredor. As portas não têm maçanetas — só terminais. O ar é frio e filtrado. Você está dentro da Torre do Silício. Lá dentro, o Xerife de Ferro aguarda. Mas antes de chegar até ele, você precisa atravessar o labirinto que a Torre se tornou.",
+    "narrativa_saida": "O Xerife de Ferro cai. Seus olhos vermelhos se apagam devagar, um por um. O silêncio que segue pesa mais do que qualquer coisa que você já ouviu. Na sala central, o terminal do Código Fonte pulsa com uma luz azul suave — esperando um comando. Esperando você.",
+
+    "inimigo_entrada": "guarda_elite_silicio",
+    "inimigos": ["ia_tatica_corrompida", "sintetico_berserker", "centauro_mecanico"],
+
+    "exploracoes_minimas": 3,
+    "exploracoes_disponiveis": 5,
+    "narrativa_exploracao_desbloqueio": "Depois de decifrar os corredores e neutralizar os sistemas de bloqueio, você chegou à sala central da Torre. A câmara do Xerife de Ferro está à sua frente. Quando estiver pronto — avance.",
+
+    "eventos_exploracao": [
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Seção A — Controle de Acesso. Câmeras por toda parte, portas com travas magnéticas. Você decifra o padrão de rotação das câmeras e avança pelos pontos cegos. Mais fundo na Torre agora."
+      },
+      {
+        "tipo": "armadilha",
+        "conta_minimo": true,
+        "narrativa_antes": "Seção B — Laboratório. Equipamentos de pesquisa abandonados. O chão tem marcações de segurança em vermelho. Você percebe tarde demais que as marcações delimitam uma zona de contenção ainda ativa."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": true,
+        "narrativa": "Seção C — Arquivo Central. Servidores do tamanho de paredes, zumbindo baixo. Os dados aqui têm décadas. Você encontra o mapa interno da Torre e localiza o caminho para a câmara do Xerife."
+      },
+      {
+        "tipo": "terminal",
+        "dificuldade": 3,
+        "conta_minimo": false,
+        "narrativa_antes": "Um terminal de administração da Torre, aparentemente desativado — mas com uma porta USB ainda alimentada. Se você conseguir entrar, pode desativar parte das defesas antes do confronto final."
+      },
+      {
+        "tipo": "cofre",
+        "dificuldade": 3,
+        "conta_minimo": false,
+        "narrativa_antes": "Uma câmara lateral, menor, com uma única caixa-forte integrada à parede. A placa diz: \"Reserva de Emergência — Autorização Nível 5\". Alguém importante guardou algo aqui para um dia que nunca chegou."
+      },
+      {
+        "tipo": "nada",
+        "conta_minimo": false,
+        "narrativa": "Você explora uma ala inativa da Torre. Paredes marcadas com arranhões — alguém esteve aqui antes de você, tentando encontrar uma saída. Os rastros terminam numa porta sem terminal do outro lado. Sem saída. Você volta pelo caminho que veio."
+      }
+    ],
+
+    "guardiao_passagem": null,
+
+    "boss": "xerife_de_ferro",
+    "desafios": [],
+    "recompensa_cofre": null,
+    "tutorial": false,
+    "musica": "tower_pulse"
+  }
+]

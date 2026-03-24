@@ -1,0 +1,166 @@
+[
+  {
+    "id": "cantil_purificado",
+    "tipo": "cura",
+    "nome": "Cantil de Água Purificada",
+    "descricao": "Água limpa vale mais que ouro no deserto.",
+    "cura": 25,
+    "raridade": "comum"
+  },
+  {
+    "id": "racao_emergencia",
+    "tipo": "cura",
+    "nome": "Ração de Emergência",
+    "descricao": "Barra comprimida de proteína sintética. Horrível, mas salva vidas.",
+    "cura": 15,
+    "raridade": "comum"
+  },
+  {
+    "id": "gel_nanite",
+    "tipo": "cura",
+    "nome": "Gel Nanite",
+    "descricao": "Nanobots que fecham ferimentos em segundos.",
+    "cura": 45,
+    "raridade": "incomum"
+  },
+  {
+    "id": "celula_regenerativa",
+    "tipo": "cura",
+    "nome": "Célula Regenerativa",
+    "descricao": "Tecnologia pré-Curto. Reconstrói tecido danificado.",
+    "cura": 70,
+    "raridade": "raro"
+  },
+  {
+    "id": "granada_plasma",
+    "tipo": "combate",
+    "nome": "Granada de Plasma",
+    "descricao": "Explode em uma esfera de calor intenso.",
+    "dano_min": 15,
+    "dano_max": 25,
+    "efeito": "fogo",
+    "raridade": "incomum"
+  },
+  {
+    "id": "spike_emp",
+    "tipo": "combate",
+    "nome": "Spike EMP",
+    "descricao": "Pulso eletromagnético que desativa sistemas eletrônicos.",
+    "dano_min": 12,
+    "dano_max": 20,
+    "efeito": "emp",
+    "raridade": "raro"
+  },
+  {
+    "id": "bomba_fumaca",
+    "tipo": "combate",
+    "nome": "Bomba de Fumaça",
+    "descricao": "Cria uma cortina de fumaça tóxica.",
+    "dano_min": 8,
+    "dano_max": 14,
+    "efeito": "stun",
+    "raridade": "comum"
+  },
+  {
+    "id": "mina_sucata",
+    "tipo": "combate",
+    "nome": "Mina de Sucata",
+    "descricao": "Feita com peças velhas. Funciona melhor do que parece.",
+    "dano_min": 20,
+    "dano_max": 35,
+    "efeito": null,
+    "raridade": "incomum"
+  },
+  {
+    "id": "oculos_mira",
+    "tipo": "utilidade",
+    "nome": "Óculos de Mira",
+    "descricao": "Visor de infravermelho que melhora a precisão.",
+    "buff_poder": 2,
+    "buff_defesa": 0,
+    "buff_esquiva": 0,
+    "buff_vida": 0,
+    "raridade": "comum"
+  },
+  {
+    "id": "blindagem_improvisada",
+    "tipo": "utilidade",
+    "nome": "Blindagem Improvisada",
+    "descricao": "Chapas de metal presas com fita. Rudimentar, mas eficaz.",
+    "buff_poder": 0,
+    "buff_defesa": 3,
+    "buff_esquiva": 0,
+    "buff_vida": 0,
+    "raridade": "incomum"
+  },
+  {
+    "id": "stimpak_adrenalina",
+    "tipo": "utilidade",
+    "nome": "Stimpak de Adrenalina",
+    "descricao": "Injeção que aguça os reflexos por alguns minutos.",
+    "buff_poder": 2,
+    "buff_defesa": 0,
+    "buff_esquiva": 2,
+    "buff_vida": 0,
+    "raridade": "raro"
+  },
+  {
+    "id": "exoframe_leve",
+    "tipo": "utilidade",
+    "nome": "Exoframe Leve",
+    "descricao": "Estrutura mecânica que amplia força e resistência.",
+    "buff_poder": 3,
+    "buff_defesa": 2,
+    "buff_esquiva": 0,
+    "buff_vida": 10,
+    "raridade": "raro"
+  },
+  {
+    "id": "revolver_modificado",
+    "tipo": "equipavel",
+    "slot": "arma",
+    "nome": "Revólver Modificado",
+    "descricao": "Barril reforçado com liga de titânio. Dispara mais rápido e com mais precisão.",
+    "mod_poder": 5,
+    "mod_defesa": 0,
+    "mod_esquiva": 1,
+    "mod_vida_max": 0,
+    "raridade": "incomum"
+  },
+  {
+    "id": "canhao_plasma",
+    "tipo": "equipavel",
+    "slot": "arma",
+    "nome": "Canhão de Plasma",
+    "descricao": "Arma pesada pré-Curto. Deixa marcas em paredes de aço.",
+    "mod_poder": 8,
+    "mod_defesa": 0,
+    "mod_esquiva": -1,
+    "mod_vida_max": 0,
+    "raridade": "raro"
+  },
+  {
+    "id": "colete_sucata",
+    "tipo": "equipavel",
+    "slot": "armadura",
+    "nome": "Colete de Sucata",
+    "descricao": "Chapas de aço soldadas sobre couro. Pesado mas salva vidas.",
+    "mod_poder": 0,
+    "mod_defesa": 4,
+    "mod_esquiva": -1,
+    "mod_vida_max": 10,
+    "raridade": "comum"
+  },
+  {
+    "id": "exoesqueleto_parcial",
+    "tipo": "equipavel",
+    "slot": "armadura",
+    "nome": "Exoesqueleto Parcial",
+    "descricao": "Estrutura mecânica que cobre tronco e braços. Tecnologia militar pré-Curto.",
+    "mod_poder": 0,
+    "mod_defesa": 7,
+    "mod_esquiva": -2,
+    "mod_vida_max": 20,
+    "raridade": "raro"
+  }
+]
