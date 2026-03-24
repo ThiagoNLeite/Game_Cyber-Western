@@ -53,7 +53,7 @@ O projeto foi desenvolvido como trabalho da disciplina de POO, com foco explíci
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/deserto-de-silicio.git
+git clone https://github.com/ThiagoNLeite/Game_Cyber-Western.git
 cd deserto-de-silicio
 
 # 2. Crie e ative o ambiente virtual
