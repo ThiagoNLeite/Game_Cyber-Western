@@ -566,49 +566,60 @@ class GerenciadorTela:
                                 _LW - PADDING * 2, _LH - PADDING * 2)
             self.tela.set_clip(_clip)
 
-            y_log       = _LY + PADDING
-            _txt_w      = _LW - PADDING * 2     # largura disponível para texto
-            turno_atual = -1                     # controla separadores por turno
+            _txt_w     = _LW - PADDING * 2
+            _linha_h   = self.fonte_pequeno.get_height() + 3   # altura de cada linha
+            _sep_h     = self.fonte_pequeno.get_height() + 2   # altura do separador
+            _area_h    = _LH - PADDING * 2                     # altura útil do painel
 
-            for entrada in log[-30:]:            # mais linhas cabem agora
-                # Entrada pode ser str simples ou dict {turno, linhas}
+            # ── Pré-processa todas as entradas do log em blocos renderizáveis ──
+            # Cada bloco: (tipo, texto, cor)  tipo="sep"|"linha"
+            def _cor_linha(txt):
+                lu = txt.upper()
+                if "CRITICO" in lu:                                  return AMARELO_CLARO
+                if "DANO" in lu or "CAUSOU" in lu:                  return VERMELHO_CLARO
+                if any(p in lu for p in ["CUROU","RECUPERA","CURA","VIDA"]): return VERDE_CLARO
+                if any(p in lu for p in ["HACK","ESCUDO","IMPROVISADO","TIRO DUPLO"]): return CIANO_CLARO
+                return CINZA_TEXTO
+
+            blocos = []   # lista de (altura_px, render_fn) — construída de trás pra frente
+            turno_visto = set()
+
+            for entrada in reversed(log):
                 if isinstance(entrada, dict):
                     num_turno = entrada.get("turno", 0)
                     linhas_ev = entrada.get("linhas", [])
                 else:
-                    # Compatibilidade com log antigo (strings simples)
                     num_turno = 0
                     linhas_ev = [entrada]
 
-                # Separador de turno quando muda
-                if num_turno != turno_atual and num_turno > 0:
-                    turno_atual = num_turno
-                    sep = f"─── Turno {num_turno} " + "─" * 40
-                    surf_sep = self.fonte_pequeno.render(sep, True, CINZA_FRACO)
-                    self.tela.blit(surf_sep, (_LX + PADDING, y_log))
-                    y_log += self.fonte_pequeno.get_height() + 2
-                    if y_log >= _LY + _LH - PADDING:
-                        break
+                # Linhas do evento (em ordem reversa para empilhar de baixo)
+                for linha in reversed(linhas_ev):
+                    subs = self._wrap_texto(linha, _txt_w, self.fonte_pequeno)
+                    cor  = _cor_linha(linha)
+                    for sub in reversed(subs):
+                        blocos.append((_linha_h, sub, cor))
 
-                for linha in linhas_ev:
-                    if y_log >= _LY + _LH - PADDING:
-                        break
-                    lu = linha.upper()
-                    cor_log = (AMARELO_CLARO  if "CRITICO"   in lu else
-                               VERMELHO_CLARO if "DANO"      in lu or "CAUSOU" in lu else
-                               VERDE_CLARO    if any(p in lu for p in
-                                                     ["CUROU","RECUPERA","CURA","VIDA"]) else
-                               CIANO_CLARO    if any(p in lu for p in
-                                                     ["HACK","ESCUDO","IMPROVISADO","TIRO DUPLO"]) else
-                               CINZA_TEXTO)
-                    # Quebra linha longa automaticamente
-                    sub_linhas = self._wrap_texto(linha, _txt_w, self.fonte_pequeno)
-                    for sub in sub_linhas:
-                        if y_log >= _LY + _LH - PADDING:
-                            break
-                        surf = self.fonte_pequeno.render(sub, True, cor_log)
-                        self.tela.blit(surf, (_LX + PADDING, y_log))
-                        y_log += self.fonte_pequeno.get_height() + 3
+                # Separador de turno (uma vez por turno, acima das linhas do evento)
+                if num_turno > 0 and num_turno not in turno_visto:
+                    turno_visto.add(num_turno)
+                    sep_txt = f"─── Turno {num_turno} " + "─" * 38
+                    blocos.append((_sep_h, sep_txt, CINZA_FRACO))
+
+            # ── Calcula quantos blocos cabem de baixo para cima ──
+            altura_usada = 0
+            blocos_visiveis = []
+            for bloco in blocos:
+                if altura_usada + bloco[0] > _area_h:
+                    break
+                blocos_visiveis.append(bloco)
+                altura_usada += bloco[0]
+
+            # ── Renderiza de baixo para cima ──
+            y_cur = _LY + _LH - PADDING   # começa na base do painel
+            for (h, txt, cor) in blocos_visiveis:
+                y_cur -= h
+                surf = self.fonte_pequeno.render(txt, True, cor)
+                self.tela.blit(surf, (_LX + PADDING, y_cur))
 
             self.tela.set_clip(None)
 
@@ -873,6 +884,19 @@ class GerenciadorTela:
         return self._tela_fim("GAME OVER",
                               "Voce caiu no deserto de silicio.",
                               VERMELHO, "Tentar Novamente", "Menu Principal")
+
+    def tela_fim_covarde(self) -> str:
+        """
+        Tela especial exibida quando o jogador foge do Xerife de Ferro.
+        Narrativa de derrota moral — o Código Fonte permanece preso.
+        """
+        return self._tela_fim(
+            "FIM DO COVARDE",
+            "Voce virou as costas para o Xerife de Ferro e fugiu.\n\n"            "O Codigo Fonte permanece preso na Torre do Silicio.\n"            "O deserto nunca soube seu nome — e nao vai saber.",
+            CINZA_FRACO,
+            "Tentar de Novo",
+            "Menu Principal",
+        )
 
     def tela_vitoria(self) -> str:
         return self._tela_fim(

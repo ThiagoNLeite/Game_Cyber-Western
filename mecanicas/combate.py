@@ -132,6 +132,31 @@ class SistemaCombate:
 
         elif acao == "item" and nome_item:
             msg = self.jogador.usar_item(nome_item)
+
+            # Aplica dano pendente do ItemCombate no inimigo
+            pendente = getattr(self.jogador, "_item_combate_pendente", None)
+            if pendente:
+                dano_item  = pendente["dano"]
+                efeito     = pendente.get("efeito")
+                nome_usado = pendente["nome"]
+
+                self.inimigo.receber_dano(dano_item)
+                msg += f"\n  {nome_usado} causou {dano_item} de dano em {self.inimigo.nome}!"
+
+                if efeito == "emp":
+                    reducao = max(1, self.inimigo.defesa // 2)
+                    self.inimigo.defesa -= reducao
+                    msg += f"\n  Pulso EMP: -{reducao} de Defesa!"
+                elif efeito == "stun":
+                    msg += f"\n  {self.inimigo.nome} foi atordoado!"
+                elif efeito == "fogo":
+                    msg += f"\n  Chamas de plasma!"
+
+                self.jogador._item_combate_pendente = None
+                # Registra linha de dano no log estruturado
+                self.log.append({"turno": self.turno,
+                                  "linhas": [f"{nome_usado} causou {dano_item} de dano em {self.inimigo.nome}!"]})
+
             turno_resultado["acao_jogador"] = {"narrativa": msg, "dano": 0}
 
         elif acao == "fugir":

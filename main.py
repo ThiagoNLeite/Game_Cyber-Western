@@ -89,10 +89,14 @@ def _narrativa_encontro(inimigo_id: str) -> str:
 #  Loop de combate
 # ================================================================== #
 
-def loop_combate(tela: GerenciadorTela, jogador: Jogador, inimigo) -> bool:
+def loop_combate(tela: GerenciadorTela, jogador: Jogador, inimigo,
+                 is_boss: bool = False) -> str | bool:
     """
     Executa um combate completo turno a turno.
-    Retorna True se o jogador venceu ou fugiu, False se morreu.
+    Retorna:
+      True       — vitória ou fuga de combate normal
+      False      — jogador morreu
+      "fuga_boss" — jogador fugiu do boss (tratado como derrota especial)
     """
     combate = SistemaCombate(jogador, inimigo)
 
@@ -130,6 +134,9 @@ def loop_combate(tela: GerenciadorTela, jogador: Jogador, inimigo) -> bool:
 
         if resultado["fim_combate"]:
             if resultado["fuga"]:
+                if is_boss:
+                    # Fugir do boss = fim de covarde
+                    return "fuga_boss"
                 tela.tela_resultado("Fuga!",
                                     "Voce escapou para lutar outro dia.")
                 return True
@@ -668,8 +675,10 @@ def loop_cenario(tela: GerenciadorTela, jogador: Jogador,
             narrativa = boss.descricao(),
             jogador   = jogador,
         )
-        vivo = loop_combate(tela, jogador, boss)
-        if not vivo:
+        resultado_boss = loop_combate(tela, jogador, boss, is_boss=True)
+        if resultado_boss == "fuga_boss":
+            return "fuga_boss"   # sinaliza para iniciar_jogo mostrar tela especial
+        if not resultado_boss:
             return "game_over"
 
     # ── 6. Narração de saída ───────────────────────────────────────
@@ -702,6 +711,10 @@ def iniciar_jogo(tela: GerenciadorTela, jogador: Jogador) -> str:
 
         if resultado == "game_over":
             opcao = tela.tela_game_over()
+            return "reiniciar" if opcao == "reiniciar" else "menu"
+
+        if resultado == "fuga_boss":
+            opcao = tela.tela_fim_covarde()
             return "reiniciar" if opcao == "reiniciar" else "menu"
 
         if resultado == "menu":
