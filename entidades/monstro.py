@@ -167,10 +167,12 @@ class Boss(Monstro):
         # Se mudou de fase, define narrativa de transição independente do acerto
         if mudou_fase == 2:
             resultado["narrativa"] = (
-                "O Xerife de Ferro range e se reconfigura. Seus olhos vermelhos "                "pulsam mais intensos. Ele entra em MODO BERSERK!"            )
+                "O Xerife de Ferro range e se reconfigura. Seus olhos vermelhos "                
+                "pulsam mais intensos. Ele entra em MODO BERSERK!")
         elif mudou_fase == 3:
             resultado["narrativa"] = (
-                "Uma sirene de emergência ecoa pela sala. O Xerife expõe seus "                "reatores nucleares e começa a se REGENERAR. Esta é a fase final!"            )
+                "Uma sirene de emergência ecoa pela sala. O Xerife expõe seus "                
+                "reatores nucleares e começa a se REGENERAR. Esta é a fase final!")
 
         # Se o ataque não acertou, retorna após registrar a narrativa de fase
         if not resultado["acertou"]:
